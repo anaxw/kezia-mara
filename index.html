@@ -3092,6 +3092,10 @@
         lbProduction.textContent = production;
         fillSection(lbProductionSection, !!production);
 
+        // garante que o painel de informações volte ao topo ao trocar de vídeo
+        const lightboxInfo = document.querySelector(".video-lightbox .lightbox-info");
+        if (lightboxInfo) lightboxInfo.scrollTop = 0;
+
         videoLightbox.classList.add("open");
         document.body.style.overflow = "hidden";
         lightboxVideo.play().catch(() => {});
