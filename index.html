@@ -3030,6 +3030,9 @@
       );
       const lbProduction = document.getElementById("lbProduction");
       const previewVideos = document.querySelectorAll(".reel-card .bg video");
+      const lightboxInfo = document.querySelector(
+        ".video-lightbox .lightbox-info",
+      );
 
       // ícones usados nas linhas de "Informações" (relógio / pino de mapa)
       const lbIcons = {
@@ -3092,18 +3095,16 @@
         lbProduction.textContent = production;
         fillSection(lbProductionSection, !!production);
 
-        // garante que o painel de informações volte ao topo ao trocar de vídeo
-        const lightboxInfo = document.querySelector(".video-lightbox .lightbox-info");
-        if (lightboxInfo) lightboxInfo.scrollTop = 0;
-
         videoLightbox.classList.add("open");
         document.body.style.overflow = "hidden";
+        if (lightboxInfo) lightboxInfo.scrollTop = 0;
         lightboxVideo.play().catch(() => {});
       }
 
       function closeVideoLightbox() {
         videoLightbox.classList.remove("open");
         document.body.style.overflow = "";
+        if (lightboxInfo) lightboxInfo.scrollTop = 0;
         lightboxVideo.pause();
         lightboxVideo.removeAttribute("src");
         lightboxVideo.load();
