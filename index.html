@@ -780,6 +780,27 @@
       .portfolio .section-head p {
         color: var(--text-dim);
       }
+      .portfolio-hint {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        margin-top: 18px;
+        font-family: var(--mono);
+        font-size: 11.5px;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        color: var(--rust);
+      }
+      .portfolio-hint svg {
+        width: 15px;
+        height: 15px;
+        flex-shrink: 0;
+        fill: none;
+        stroke: currentColor;
+        stroke-width: 1.6;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+      }
       .portfolio-head-row {
         display: flex;
         justify-content: space-between;
@@ -2192,6 +2213,12 @@
               institucionais, cobertura de eventos e conteúdos para redes
               sociais, sempre com foco em transmitir a essência de cada marca.
             </p>
+            <span class="portfolio-hint">
+              <svg viewBox="0 0 24 24">
+                <path d="M6 4l14 8-14 8z" />
+              </svg>
+              Clique nos vídeos para ver mais informações
+            </span>
           </div>
         </div>
 
